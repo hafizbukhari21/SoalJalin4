@@ -20,12 +20,7 @@ class SoalEmpat{
 
             Scanner scanner =  new Scanner(System.in);
             System.out.println("Masukan Bank apa yang mau disent "); 
-            int number=1;
-            for (Mapper bankMapper : returnMapper) {
-                System.out.print(number+" ");
-                number++;
-                System.out.println(bankMapper.bankCode);
-            }
+            voidPrintConsole(returnMapper);
             System.out.print("Masukan code Bank = ");
             String chooseBankCode = scanner.nextLine();
             
@@ -48,6 +43,15 @@ class SoalEmpat{
 
       
         
+    }
+
+    public static void voidPrintConsole(List<Mapper> returnMapper){
+      int number=1;
+       for (Mapper bankMapper : returnMapper) {
+                System.out.print(number+" ");
+                number++;
+                System.out.println(bankMapper.bankCode);
+            }
     }
 
 
