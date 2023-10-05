@@ -29,7 +29,6 @@ class SoalEmpat{
             System.out.print("Masukan code Bank = ");
             String chooseBankCode = scanner.nextLine();
             
-            Mapper tempMapper = null;
             for (Mapper bankMapper : returnMapper) {
                if(bankMapper.bankCode.equals(chooseBankCode)){
                     bankMapper.bankdetail.forEach((bd)->{
