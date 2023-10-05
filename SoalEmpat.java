@@ -19,7 +19,6 @@ class SoalEmpat{
 
 
             Scanner scanner =  new Scanner(System.in);
-            
             System.out.println("Masukan Bank apa yang mau disent "); 
             int number=1;
             for (Mapper bankMapper : returnMapper) {
@@ -29,29 +28,30 @@ class SoalEmpat{
             }
 
             String chooseBankCode = scanner.nextLine();
-
+            
             for (Mapper bankMapper : returnMapper) {
-
                if(bankMapper.bankCode.equals(chooseBankCode)){
-                bankMapper.bankdetail.forEach((bd)->{
-                    System.out.println("EN MP Port :"+ bd.port + " Terpantau offine" );
-                });
-                return;
-               }
-               else{
-                    System.out.println("Not FoundMD" );
+                    bankMapper.bankdetail.forEach((bd)->{
+                        System.out.println("ENVI MP Port="+bd.port+" Terpantau offline");
+                    });
+                    fileReader.close();
+                    return;
                }
             }
-            
-            
-
+            System.out.println("Not Found");
             fileReader.close();
+
        }catch(IOException e){
             
        }
 
       
         
+    }
+
+
+    public void WriteReport(String bankCode, Mapper mapper){
+
     }
 
 }
