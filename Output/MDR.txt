@@ -1,0 +1,8 @@
+Selamat siang Rekan Bank MDR
+
+    -ENVI MP Port 7120 Terpantau Offline
+    -ENVI MP Port 8066 Terpantau Offline
+    -ENVI MP Port 8081 Terpantau Offline
+    -ENVI MP Port 8064 Terpantau Offline
+
+Terima Kasih

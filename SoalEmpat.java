@@ -26,14 +26,16 @@ class SoalEmpat{
                 number++;
                 System.out.println(bankMapper.bankCode);
             }
-
+            System.out.print("Masukan code Bank = ");
             String chooseBankCode = scanner.nextLine();
             
+            Mapper tempMapper = null;
             for (Mapper bankMapper : returnMapper) {
                if(bankMapper.bankCode.equals(chooseBankCode)){
                     bankMapper.bankdetail.forEach((bd)->{
                         System.out.println("ENVI MP Port="+bd.port+" Terpantau offline");
                     });
+                    WriteReport(bankMapper);
                     fileReader.close();
                     return;
                }
@@ -50,8 +52,29 @@ class SoalEmpat{
     }
 
 
-    public void WriteReport(String bankCode, Mapper mapper){
+    public static void WriteReport( Mapper mapper){
+      try {
+        FileWriter myWriter = new FileWriter("Output/"+mapper.bankCode+".txt");
+        myWriter.write("Selamat siang Rekan Bank "+mapper.bankCode);
 
+        myWriter.write(System.lineSeparator());
+        myWriter.write(System.lineSeparator());
+
+        for(Bank bank : mapper.bankdetail){
+            myWriter.write("    -ENVI MP Port "+bank.port+" Terpantau Offline");
+            myWriter.write(System.lineSeparator());
+
+        }
+        myWriter.write(System.lineSeparator());
+        myWriter.write("Terima Kasih");
+
+
+        myWriter.close();
+        System.out.println("Successfully wrote to the file.");
+      } catch (IOException e) {
+        System.out.println("An error occurred.");
+        e.printStackTrace();
+      }
     }
 
 }
