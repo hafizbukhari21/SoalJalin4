@@ -20,12 +20,12 @@ class SoalEmpat{
 
             Scanner scanner =  new Scanner(System.in);
             System.out.println("Masukan Bank apa yang mau disent "); 
-            voidPrintConsole(returnMapper);
-            System.out.print("Masukan code Bank = ");
-            String chooseBankCode = scanner.nextLine();
+            // voidPrintConsole(returnMapper);
+            // System.out.print("Masukan code Bank = ");
+            // String chooseBankCode = scanner.nextLine();
             
             for (Mapper bankMapper : returnMapper) {
-               if(bankMapper.bankCode.equals(chooseBankCode)){
+               if(bankMapper.bankCode.equals(args[0])){
                     bankMapper.bankdetail.forEach((bd)->{
                         System.out.println("ENVI MP Port="+bd.port+" Terpantau offline");
                     });
