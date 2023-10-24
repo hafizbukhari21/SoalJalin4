@@ -1,0 +1,1 @@
+15 13 * * * cd /hafizproject/SoalJalin4/ && java SoalEmpat BTN
